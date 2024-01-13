@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>IT 和互联网 on 乌云盖雪</title><link>https://wygxmew.github.io/categories/it-%E5%92%8C%E4%BA%92%E8%81%94%E7%BD%91/</link><description>Recent content in IT 和互联网 on 乌云盖雪</description><generator>Hugo -- gohugo.io</generator><language>zh</language><copyright>&amp;copy; 2006 - {year} 乌云盖雪</copyright><lastBuildDate>Sat, 22 Oct 2022 05:26:22 +0800</lastBuildDate><atom:link href="https://wygxmew.github.io/categories/it-%E5%92%8C%E4%BA%92%E8%81%94%E7%BD%91/index.xml" rel="self" type="application/rss+xml"/><item><title>配置 Plank Dock 常见问题</title><link>https://wygxmew.github.io/posts/plank-configuration/</link><pubDate>Sat, 22 Oct 2022 05:26:22 +0800</pubDate><atom:modified>Sat, 22 Oct 2022 05:26:22 +0800</atom:modified><guid>https://wygxmew.github.io/posts/plank-configuration/</guid><description>Plank 是目前为止 Linux 桌面最简洁的、最轻量的 Dock 工具，是一个类似 MacOS 系统中的 Dock 程序坞效果的应用。 对 Plank 进行配置，将鼠标放在 Dock 上面，按住 Ctrl 键同时点击鼠标右键</description><content:encoded>&lt;p>&lt;a href="https://wiki.archlinux.org/title/Plank">Plank&lt;/a> 是目前为止 Linux 桌面最简洁的、最轻量的 Dock 工具，是一个类似 MacOS 系统中的 Dock 程序坞效果的应用。&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>对 Plank 进行配置，将鼠标放在 Dock 上面，按住 Ctrl 键同时点击鼠标右键，这时，会弹出应用设置菜单，选择首选项，进入 Plank 的设置页面。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>如果有些软件无法添加 logo，可以用文件管理器打开 /usr/share/application，直接拖拽即可。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>如果要更改 Plank 中显示的任何应用程序图标，一种方法是在 /usr/share/applications 中查找该应用程序的 .desktop 文件并对其进行编辑，专门修改了表示 Icon = ? 的参数才行，但当我们更新应用程序并更新 /usr/share/applications 的 .desktop 文件时，将恢复到默认情况下显示的图标，然后我们将不得不再次对其进行更改。为避免这种情况，应将应用程序的 .desktop 文件复制到 /home/用户名/.local/share/applications 目录中并编辑该新文件，然后将该文件拖曳至 Plank 面板，以这种方式，当 /usr/shared/applications 的 .desktop 文件随更新而更改时，我们在 /home/用户名/.local/share/applications 中的文件（Plank 优先考虑）不会发生变化。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Xfce 桌面环境安装 Plank 后桌面有一道阴影，解决办法是依次点击系统“设置管理器-&amp;gt;窗口管理器微调-&amp;gt;合成器”，然后取消“在 dock 窗口下显示阴影”选项前面的勾即可。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>参考：&lt;a href="https://blog.desdelinux.net/zh-CN/%E5%A6%82%E4%BD%95%E8%87%AA%E5%AE%9A%E4%B9%89%E6%88%96%E6%9B%B4%E6%94%B9%E6%9C%A8%E6%9D%BF%E5%9B%BE%E6%A0%87/">如何自定义或更改 Plank 图标&lt;/a>&lt;/p></content:encoded><dc:creator>乌云盖雪</dc:creator><category>Linux</category><category>IT</category><category>笔记</category><category>IT 和互联网</category></item><item><title>pacman 和 yay 常用命令</title><link>https://wygxmew.github.io/posts/pacman-yay-common-commands/</link><pubDate>Wed, 28 Sep 2022 22:50:22 +0800</pubDate><atom:modified>Wed, 28 Sep 2022 22:50:22 +0800</atom:modified><guid>https://wygxmew.github.io/posts/pacman-yay-common-commands/</guid><description>Pacman 是一个功能强大的软件包管理器，作为 Arch Linux 发行版的一部分。简单来说，就是和 apt-get 之于Ubuntu一样，pacman 就是 Arch 的 apt-get。pacm</description><content:encoded>&lt;p>Pacman 是一个功能强大的软件包管理器，作为 Arch Linux 发行版的一部分。简单来说，就是和 apt-get 之于Ubuntu一样，pacman 就是 Arch 的 apt-get。pacman 的常用命令如下：&lt;/p>
+&lt;h3 id="更新系统">&lt;strong>更新系统&lt;/strong>&lt;/h3>
+&lt;p>pacman -Syu &lt;em># 对整个系统进行更新。&lt;/em>&lt;br />
+pacman -Sy &lt;em># 下载远程仓库最新软件列表到本地，将本地的包数据库与远程的仓库进行同步。&lt;/em>&lt;br />
+pacman -Su &lt;em># 升级所有已安装的软件包。&lt;/em>&lt;/p>
+&lt;h3 id="安装软件包">&lt;strong>安装软件包&lt;/strong>&lt;/h3>
+&lt;p>pacman -S 软件包名 &lt;em># 安装软件包。也可以同时安装多个包，只需以空格分隔包名即可。&lt;/em>&lt;br />
+pacman -Sy 软件包名 &lt;em># 在同步包数据库（数据库即所有软件列表）后再执行安装。&lt;/em>&lt;br />
+pacman -Sv 软件包名 &lt;em># 在显示一些操作信息后执行安装。&lt;/em>&lt;br />
+pacman -U 软件包名.pkg.tar.gz &lt;em># 安装本地软件包，其扩展名为 pkg.tar.gz。&lt;/em>&lt;br />
+pacman -U http://url/package_name-version.pkg.tar.gz &lt;em># 安装一个远程包（不在 pacman 配置的源里面）。&lt;/em>&lt;/p>
+&lt;h3 id="卸载软件包">&lt;strong>卸载软件包&lt;/strong>&lt;/h3>
+&lt;p>pacman -R 软件包名 &lt;em># 该命令只删除软件包，保留其全部已经安装的依赖关系。&lt;/em>&lt;br />
+pacman -Rv 软件包名 &lt;em># 删除软件包，并显示详细的信息。&lt;/em>&lt;br />
+pacman -Rs 软件包名 &lt;em># 删除软件包，同时删除本机上只有该软件依赖而没有被其他已安装软件包使用的的软件。&lt;/em>&lt;br />
+pacman -Rsc 软件包名 &lt;em># 删除软件包，并删除所有依赖这个软件的程序，慎用。&lt;/em>&lt;br />
+pacman -Ru 软件包名 &lt;em># 删除软件包，同时删除不再被任何软件所需要的依赖。&lt;/em>&lt;br />
+pacman -Rd 软件包名 &lt;em># 在删除软件包时不检查依赖。&lt;/em>&lt;br />
+pacman -Rn 软件包名 &lt;em># 缺省地，pacman会备份被删除程序的配置文件，将它们加上 pacsave 扩展名。如果在删除软件包时要同时删除相应的配置文件（这种行为在基于 Debian 的系统中称为清除 purging），可是使用该命令。&lt;/em>&lt;br />
+pacman -Rsn 软件包名 &lt;em># 该命令删除一个软件包、它的配置文件以及所有不再需要的依赖。-s参数用来删除当前无用的依赖。&lt;/em>&lt;/p>
+&lt;h3 id="搜索软件包">&lt;strong>搜索软件包&lt;/strong>&lt;/h3>
+&lt;p>pacman -Ss 关键字 &lt;em># 在仓库中搜索含关键字的软件包（本地已安装的会标记）。&lt;/em>&lt;br />
+pacman -Qs 关键字 &lt;em># 搜索已安装的软件包。&lt;/em>&lt;br />
+pacman -Qu &lt;em># 列出所有可升级的软件包。&lt;/em>&lt;br />
+pacman -Qt &lt;em># 列出不被任何软件要求的软件包。&lt;/em>&lt;/p>
+&lt;p>查询软件信息&lt;/p>
+&lt;p>pacman -Q 软件包名 &lt;em># 查看软件包是否已安装，已安装则显示软件包名称和版本。&lt;/em>&lt;br />
+pacman -Qi 软件包名 &lt;em># 查看某个软件包信息，显示较为详细的信息，包括描述、构架、依赖、大小等等。&lt;/em>&lt;br />
+pacman -Ql 软件包名 &lt;em># 列出软件包内所有文件，包括软件安装的每个文件、文件夹的名称和路径。&lt;/em>&lt;br />
+pacman -Qo /path/to/a/file &lt;em># 可以通过查询数据库获知目前你的文件系统中某个文件是属于哪个软件包。&lt;/em>&lt;br />
+pacman -Qdt &lt;em># 罗列所有不再作为依赖的软件包（孤立 orphans）。&lt;/em>&lt;/p>
+&lt;h3 id="软件包组">&lt;strong>软件包组&lt;/strong>&lt;/h3>
+&lt;p>pacman -Sg &lt;em># 列出软件仓库上所有的软件包组。&lt;/em>&lt;br />
+pacman -Qg &lt;em># 列出本地已经安装的软件包组和子包。&lt;/em>&lt;br />
+pacman -Sg 软件包组 &lt;em># 查看某软件包组所包含的所有软件包。&lt;/em>&lt;br />
+pacman -Qg 软件包组 &lt;em># 和 pacman -Sg 软件包组完全一样。&lt;/em>&lt;/p>
+&lt;p>很多人建议通过安装软件组来安装工具链，例如：&lt;/p>
+&lt;p>pacman -S mingw-w64-x86_64-toolchain&lt;br />
+pacman -S mingw-w64-i686-toolchain&lt;br />
+pacman -S mingw-w64-x86_64-qt5&lt;br />
+pacman -S base-devel&lt;/p>
+&lt;h3 id="清理缓存">&lt;strong>清理缓存&lt;/strong>&lt;/h3>
+&lt;p>pacman -Sc &lt;em># 清理未安装的包文件，包文件位于 /var/cache/pacman/pkg/ 目录。&lt;/em>&lt;br />
+pacman -Scc &lt;em># 清理所有的缓存文件。警告：关于 pacman -Scc，仅在你确定不需要做任何软件包降级工作时才这样做。pacman -Scc 会从缓存中删除所有软件包。&lt;/em>&lt;/p>
+&lt;p>要了解更详细的参数开关可以 pacman –help 或者 man pacman。&lt;/p>
+&lt;h3 id="配置和常用选项">&lt;strong>配置和常用选项&lt;/strong>&lt;/h3>
+&lt;p>Pacman 的配置文件位于/etc/pacman.conf。关于配置文件的进一步信息可以用 man pacman.conf 查看。&lt;br />
+常用选项都在[options]段。阅读 man 手册或者查看缺省的 pacman.conf 可以获得有关信息和用途。&lt;/p>
+&lt;p>跳过升级软件包&lt;/p>
+&lt;p>如果由于某种原因，你不希望升级某个软件包（如果有多个包不需要升级，只需以空格分隔包名即可），可以加入内容如下：&lt;br />
+IgnorePkg = 软件包名&lt;/p>
+&lt;p>跳过升级软件包组&lt;/p>
+&lt;p>和软件包一样，你也可以象这样跳过升级某个软件包组：&lt;br />
+IgnoreGroup = gnome&lt;/p>
+&lt;h3 id="附注">&lt;strong>附注&lt;/strong>&lt;/h3>
+&lt;p>Arch Linux 的版本库里面包括：&lt;br />
+core &lt;em># 核心软件包。&lt;/em>&lt;br />
+extra &lt;em># 其他常用软件。&lt;/em>&lt;br />
+community &lt;em># 社区软件包，譬如 Mysql 等。&lt;/em>&lt;br />
+testing &lt;em># 正在测试阶段，还没有正式加入源的软件包。通常软件版本比较新，但是不是非常稳定。&lt;/em>&lt;br />
+release &lt;em># 已经发布的软件包。&lt;/em>&lt;br />
+unstable &lt;em># 非正式的软件包，可能包括以前版本的软件或者测试软件。&lt;/em>&lt;/p>
+&lt;p>因为Pacman的软件都是从源里面更新，因此在 /etc/pacman.d 里面配置这些软件源的地址。在 /etc/pacman.d 目录里面分别有上面几种软件类型对应的文件名，可以自己手工配置这些软件源的地址。&lt;/p>
+&lt;p>Pacman 是一个功能强大的包管理器，作为基于 Arch 的发行版的默认设置提供，但它缺乏从 Arch 用户存储库 (AUR) 下载包的功能。 AUR 是一个社区维护的存储库，以安装脚本的形式提供数千个第三方包，也称为 PKGBUILD。要使用这些 PKGBUILD 安装包，我们需要像 yay 这样的 AUR 助手。 yay 可以执行 pacman 的几乎所有操作，并在此基础上添加了很多额外用法。yay 的用法和 pacman 完全类似，上述所有 pacman xxx 命令，均可替换成 yay xxx 执行。yay 安装命令不需要加 sudo。&lt;/p>
+&lt;p>&lt;strong>yay 的常用命令&lt;/strong>&lt;/p>
+&lt;p>yay 软件包名或搜索词 &lt;em># 从仓库和 AUR 中交互式搜索和安装软件包。&lt;/em>&lt;br />
+yay &lt;em># 同步并更新所有来自仓库和 AUR 的软件包。后面不跟任何参数时，yay 会执行操作 yay -Syu，它会先调用 pacman 更新源的数据库、更新所有从源内安装的软件包，并检查你的 AUR 包有没有更新。&lt;/em>&lt;br />
+yay -Sua &lt;em># 只同步和更新 AUR 软件包。&lt;/em>&lt;br />
+yay -S 软件包名 &lt;em># 从仓库和 AUR 中安装一个新的软件包。&lt;/em>&lt;br />
+yay -Ss 关键词 &lt;em># 从仓库和 AUR 中搜索软件包数据库中的关键词。&lt;/em>&lt;br />
+yay -Ps &lt;em># 显示已安装软件包和系统健康状况的统计数据。&lt;/em>&lt;/p>
+&lt;p>参考：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://hustlei.github.io/2018/11/msys2-pacman.html">pacman常用命令&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://ipcmen.com/pacman">pacman命令详解&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.linux-man.cn/command/yay/">Linux yay 命令手册&lt;/a>&lt;/li>
+&lt;/ul></content:encoded><dc:creator>乌云盖雪</dc:creator><category>Linux</category><category>IT</category><category>笔记</category><category>IT 和互联网</category></item><item><title>一种选择性可见互联网</title><link>https://wygxmew.github.io/posts/selective-visible-internet/</link><pubDate>Fri, 06 May 2022 05:32:12 +0800</pubDate><atom:modified>Fri, 06 May 2022 05:32:12 +0800</atom:modified><guid>https://wygxmew.github.io/posts/selective-visible-internet/</guid><description>一种选择性可见互联网，其实就是限流思想的进化和升级版本，举个例子，比如你是一潜在的重量级政治异议人士，但还没怎么崭露头角，或者发明了能引起社</description><content:encoded>&lt;p>一种选择性可见互联网，其实就是限流思想的进化和升级版本，举个例子，比如你是一潜在的重量级政治异议人士，但还没怎么崭露头角，或者发明了能引起社会巨大变革的技术（比如像中本聪发明的比特币区块链之类），但还没有公开，在此前很久就已被老大哥通过大数据分析给盯上了，老大哥决定最好能化敌为友，用比较人道的方式收服你，从你的网络社交关系入手，比如安排特工跟你谈恋爱，结婚生子，通过人际（亲密）关系控制你，当你老婆孩子甚至好友都是老大哥的人，而且其中有各种利益关系，你还敢不听话吗？那么，如何确保让你只能跟老大哥指定的人谈恋爱？那就是把现在的限流技术升级，可以设定你的贴子某些人可见，某些人不可见，在时间轴上，只有特工五毛水军等老大哥的人可以跟你双向可见，其它的人，要么你看不到他的帖子，要么他看不到你的，或者彼此都看不到，最终只能错过，所以跟你互动的只有那些老大哥的人，你以为你可以自由选择，但其实无论你跟哪个谈恋爱，最终都逃不出老大哥的魔掌，所以某种意义上你的命运就这样被老大哥通过选择性可见互联网给控制了。是不是很可怕？&lt;/p></content:encoded><dc:creator>乌云盖雪</dc:creator><category>观察</category><category>思考</category><category>互联网</category><category>社会</category><category>IT 和互联网</category><category>社会观察</category><category>面向未知的思索</category></item><item><title>Firefox 89 的全新 Proton 界面</title><link>https://wygxmew.github.io/posts/firefox-89-new-proton-ui/</link><pubDate>Thu, 03 Jun 2021 20:32:07 +0800</pubDate><atom:modified>Thu, 03 Jun 2021 20:32:07 +0800</atom:modified><guid>https://wygxmew.github.io/posts/firefox-89-new-proton-ui/</guid><description>今天发现 Firefox 更新到了 89.0 版本，采用了全新设计的 Proton 界面。 如果嫌新 UI 占用空间，想使用紧凑布局，只需在地址栏键入 about:config，选择接受风险</description><content:encoded>&lt;p>今天发现 Firefox 更新到了 89.0 版本，采用了全新设计的 Proton 界面。&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>如果嫌新 UI 占用空间，想使用紧凑布局，只需在地址栏键入 about:config，选择接受风险并继续，然后搜索 browser.compactmode.show，将其值切换为 true，然后在「定制工具栏」界面切换到紧凑布局即可。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>如果不喜欢新的 Proton 界面 ，可以将 browser.proton.enabled 的值切换为 false，具体操作步骤同上，即可关闭新 UI 恢复到旧 UI。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;br/>
+&lt;p>参考：&lt;a href="https://v2ex.com/t/780758">Firefox 89 更新了设计语言，感觉不错&lt;/a>&lt;/p></content:encoded><dc:creator>乌云盖雪</dc:creator><category>Firefox</category><category>UI</category><category>IT</category><category>笔记</category><category>IT 和互联网</category></item><item><title>VLC 播放器无法退出及丢帧问题</title><link>https://wygxmew.github.io/posts/vlc-does-not-exit-and-video-dropping-frames/</link><pubDate>Tue, 20 Apr 2021 22:32:07 +0800</pubDate><atom:modified>Tue, 20 Apr 2021 22:32:07 +0800</atom:modified><guid>https://wygxmew.github.io/posts/vlc-does-not-exit-and-video-dropping-frames/</guid><description>使用 Manjaro Linux（KDE 桌面环境）很长时间了，但有一个问题一直困扰着我，它的默认播放器 VLC 播放视频关闭后无法退出，其图标仍停留在系统托盘中，而</description><content:encoded>&lt;p>使用 Manjaro Linux（KDE 桌面环境）很长时间了，但有一个问题一直困扰着我，它的默认播放器 VLC 播放视频关闭后无法退出，其图标仍停留在系统托盘中，而且无法打开新的视频，还有一个问题就是有的视频用 VLC 播放非常卡，时时出现丢帧现象，然而在 Windows 10 下用别的播放器比如 PotPlayer 播放却没有这个问题，这说明不是硬件问题。所以我在 Manjaro 中安装了别的播放器，试了很多款，最终选择了 bomi 播放器，其它的要么掉帧卡顿要么颜值不行。今天闲着无聊的时候终于找到了解决 VLC 无法退出及丢帧卡顿问题的解决办法，简单设置一下即可，打开 VLC 播放器，依次点击：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>工具&amp;gt;偏好设置&amp;gt;视频&amp;gt;output&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>工具&amp;gt;偏好设置&amp;gt;输入/编解码器&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>然后选择与系统相匹配的选项，可能是 XCB 或 VDPAU，上面两项设置我选的是“XVideo 输出 (XCB)“以及“自动”，因为我查看我的 Manjaro 系统信息，图形平台是 X11，如果不清楚的话可以逐个试一下。这样设置之后，上面的两个问题都解决了。&lt;/p>
+&lt;p>参考：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://forum.manjaro.org/t/vlc-does-not-end-process-after-closed/14385">Vlc does not end process after closed&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.dazhuanlan.com/2020/02/06/5e3bfaaaedce0/">mplayer视频输出选项&lt;/a>&lt;/li>
+&lt;/ul></content:encoded><dc:creator>乌云盖雪</dc:creator><category>VLC</category><category>Manjaro</category><category>Linux</category><category>IT</category><category>笔记</category><category>IT 和互联网</category></item><item><title>解决 Mellow 在 Manjaro 中开机自启后无法自动连接的问题</title><link>https://wygxmew.github.io/posts/mellow-failed-to-connect-automatically-after-manjaro-booting/</link><pubDate>Tue, 04 Feb 2020 19:50:25 +0800</pubDate><atom:modified>Tue, 04 Feb 2020 19:50:25 +0800</atom:modified><guid>https://wygxmew.github.io/posts/mellow-failed-to-connect-automatically-after-manjaro-booting/</guid><description>最近在 Manjaro Linux 中安装了透明代理工具 Mellow，把 Mellow 添加到开机自启列表后，在设置中勾选 Auto Launch 和 Auto Connect ，然后开机重启，Mellow 无法自动连接，并弹出</description><content:encoded>&lt;p>最近在 Manjaro Linux 中安装了透明代理工具 Mellow，把 Mellow 添加到开机自启列表后，在设置中勾选 Auto Launch 和 Auto Connect ，然后开机重启，Mellow 无法自动连接，并弹出如下提示：&lt;/p>
+&lt;blockquote>
+&lt;p>Failed to find the default gateway，please ensure your network is reachable. You may try to restart/reconnect the network/wifi.&lt;/p>
+&lt;/blockquote>
+&lt;p>我是通过如下设置解决问题的：右击任务栏中的网络连接图标,，点击“&lt;strong>配置网络连接&lt;/strong>”，在有线连接或WiFi 的安全选项中把“&lt;strong>仅对当前用户保存密码（加密）&lt;/strong>”改成“&lt;strong>为所有用户保存密码（不加密）&lt;/strong>”。然后重启，Mellow 就能自动连接，不再弹出上述提示了。&lt;/p></content:encoded><dc:creator>乌云盖雪</dc:creator><category>Mellow</category><category>Manjaro</category><category>Linux</category><category>IT</category><category>笔记</category><category>IT 和互联网</category></item><item><title>Hexo 如何删除 git commit 历史记录</title><link>https://wygxmew.github.io/posts/hexo-delete-git-commit-history/</link><pubDate>Fri, 06 Sep 2019 12:40:38 +0800</pubDate><atom:modified>Fri, 06 Sep 2019 12:40:38 +0800</atom:modified><guid>https://wygxmew.github.io/posts/hexo-delete-git-commit-history/</guid><description>有时 Hexo 博客发布之后，会对博客内容再进行修改，如果不想要别人看到 Hexo 博客的修改历史，只保留最后的版本，那我们可以把以前的 git commit 历史记录清理掉，这样</description><content:encoded>&lt;p>有时 Hexo 博客发布之后，会对博客内容再进行修改，如果不想要别人看到 Hexo 博客的修改历史，只保留最后的版本，那我们可以把以前的 git commit 历史记录清理掉，这样还可以减少占用的 Pages 空间。操作步骤如下：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>删除 .deploy_git 文件夹。为防意外删前最好备份一下，git commit 历史记录就保存在这个文件夹里。.deploy_git 文件夹是隐藏文件夹，需要在设置里开启显示隐藏文件（夹）选项才能看到。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>打开 Git Bash 进入 Hexo 站点目录。具体操作是，打开 Hexo 博客目录，然后在此处单击右键调用相关菜单打开 Git Bash 或终端。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在 Git Bash 或终端中执行命令：&lt;/p>
+&lt;pre tabindex="0">&lt;code>hexo clean
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;li>
+&lt;p>在 Git Bash 或终端中执行命令：&lt;/p>
+&lt;pre tabindex="0">&lt;code>hexo d -g
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;/ol></content:encoded><dc:creator>乌云盖雪</dc:creator><category>Hexo</category><category>Git</category><category>IT</category><category>互联网</category><category>笔记</category><category>IT 和互联网</category><category>博客建站</category></item><item><title>解决 Windows Thin PC 系统中 Firefox 和 IE 播放音频和视频的问题</title><link>https://wygxmew.github.io/posts/thin-pc-firefox-ie-audio-video/</link><pubDate>Tue, 09 Apr 2019 12:00:07 +0800</pubDate><atom:modified>Tue, 09 Apr 2019 12:00:07 +0800</atom:modified><guid>https://wygxmew.github.io/posts/thin-pc-firefox-ie-audio-video/</guid><description>今天为我的 Windows Thin PC 系统安装了一些功能组件，解决了一系列问题。 使用 Thin PC 一段时间了，有一个问题一直困扰着我，我的 Thin PC 上的 Firefox / IE11 无法播放一些 HTML5 音频和</description><content:encoded>&lt;p>今天为我的 &lt;a href="https://baike.baidu.com/item/Windows%20Thin%20PC">Windows Thin PC&lt;/a> 系统安装了一些功能组件，解决了一系列问题。&lt;/p>
+&lt;p>使用 Thin PC 一段时间了，有一个问题一直困扰着我，我的 Thin PC 上的 Firefox / IE11 无法播放一些 HTML5 音频和视频（但 Chrome 可以），比如，我博客上的 HTML5 音频标记为“&lt;strong>错误：音频类型不受支持或文件路径无效&lt;/strong>”，Twitter 上的视频则提示“&lt;strong>我们无法在这个浏览器上播放视频，请尝试换用其它浏览器。&lt;/strong>”然而 Youtube 上的视频则可以播放，奇怪的很。因为这个原因再加上 Firefox 在我这台 Thin PC 电脑上的速度不如 Chrome 快，所以一直在用 Chrome。然而最近发现 Firefox 升级后打开我博客的速度要比 Chrome 快（可是在另一台配置较高的 Win10 上则相反），因此打算在我的 Thin PC 电脑上主要使用 Firefox，于是经过一番查找终于找到了问题的症结所在： Windows Thin PC 没有安装相应的音频和视频组件。&lt;/p>
+&lt;p>经测试，安装如下组件可解决上述在 Firefox 中无法播放 Twitter 视频的问题，但 IE 中问题依旧。&lt;/p>
+&lt;ol>
+&lt;li>winemb-premiumcodecs-dolby-ac3-audioencoder.cab&lt;/li>
+&lt;li>WinEmb-PremiumCodecs-MPEG2andDolbyDecoder.cab&lt;/li>
+&lt;li>WinEmb-PremiumCodecs-MPEG2-Decoder.cab&lt;/li>
+&lt;li>winemb-premiumcodecs-mpeg2-encoder.cab&lt;/li>
+&lt;li>WinEmb-PremiumCodecs-MPEG3.cab&lt;/li>
+&lt;li>WinEmb-PremiumCodecs-MPEG4.cab&lt;/li>
+&lt;li>winemb-premiumcodecs-wmv.cab&lt;/li>
+&lt;/ol>
+&lt;p>安装 winemb-media-support.cab 组件解决了有些 HTML5 音频和视频在 Thin PC 的 Firefox / IE11 中无法播放的问题。&lt;/p>
+&lt;p>另外安装 winemb-photos-viewer.cab 组件可解决 Thin PC 不使用第三方图片浏览软件无法查看图片的问题，安装这个组件后电脑中图片的右键菜单会出现两个“预览”，我用右键管家解决了这个问题。&lt;/p>
+&lt;p>具体安装步骤和方法参照如下文章：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="http://www.360doc.com/content/17/0627/11/1892865_666882855.shtml">开启 Windows Thin PC 被关闭的 Windows 功能&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://blog.51cto.com/rdsrv/843455">Windows Thin PC 安装功能组件&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://blog.51cto.com/rdsrv/842897">Windows Thin PC 中文化&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>再安装&lt;a href="https://laod.cn/tools/adobe-flash-player-ax-np-pp-31-0-0-153.html">去广告和捆绑的 Adobe Flash Player&lt;/a>，Thin PC 系统中 Firefox 应该就可以播放几乎所有网页的音视频了，这就完美了。&lt;/p></content:encoded><dc:creator>乌云盖雪</dc:creator><category>Thin PC</category><category>Windows</category><category>Firefox</category><category>IE</category><category>IT</category><category>笔记</category><category>IT 和互联网</category></item><item><title>安装并迁移到 Typecho 遇到的一些问题及解决方法</title><link>https://wygxmew.github.io/posts/install-and-migrate-to-typecho/</link><pubDate>Mon, 17 Dec 2018 11:50:35 +0800</pubDate><atom:modified>Mon, 17 Dec 2018 11:50:35 +0800</atom:modified><guid>https://wygxmew.github.io/posts/install-and-migrate-to-typecho/</guid><description>最近把博客从 WordPress 迁移到 Typecho 平台，遇到的一些问题及解决方法记录如下： 1. 安装时卡在第2步初始化配置页面 （1）卡在数据库连接页面，提示“对不起，无法连</description><content:encoded>&lt;p>最近把博客从 WordPress 迁移到 Typecho 平台，遇到的一些问题及解决方法记录如下：&lt;/p>
+&lt;h4 id="1-安装时卡在第2步初始化配置页面">&lt;strong>1. 安装时卡在第2步初始化配置页面&lt;/strong>&lt;/h4>
+&lt;p>（1）卡在数据库连接页面，提示“对不起，无法连接数据库，请先检查数据库配置再继续进行安装”。解决方法是，把数据库密码重新填写一遍然后继续进行就可以了，只刷新不重新填写数据库密码是不管用的。并不是密码输入错误，我先后试了好几遍。&lt;/p>
+&lt;p>（2）卡在数据库配置页面，提示“确认您的配置 数据库配置”。这个时候不要关闭当前页面，在 install.php 文件的第56行加入如下代码，然后刷新卡住的数据库配置页面即可解决问题。&lt;/p>
+&lt;pre tabindex="0">&lt;code>ob_start();
+&lt;/code>&lt;/pre>&lt;h4 id="2-开启地址重写">&lt;strong>2. 开启地址重写&lt;/strong>&lt;/h4>
+&lt;p>安装完毕，在 Typecho 后台永久链接设置里开启地址重写功能后，除了后台和主页外其它页面均出现404错误，我所在主机服务器是 Apache，解决方法是，在网站根目录下新建 .htaccess，输入如下内容：&lt;/p>
+&lt;pre tabindex="0">&lt;code>RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [L,E=PATH_INFO:$1]
+&lt;/code>&lt;/pre>&lt;h4 id="3-从-wordpress-迁移到-typecho">&lt;strong>3. 从 WordPress 迁移到 Typecho&lt;/strong>&lt;/h4>
+&lt;p>网上查了一下，好像都说要用两个数据库，一个 WordPress 的，一个 Typecho 的。但是我的空间只允许一个数据库，那怎么办？没关系，经本人尝试，发现只用一个数据库也可以。操作步骤如下：&lt;/p>
+&lt;p>（1）安装 Typecho 前，先从 WordPress 数据库导出数据。&lt;br />
+（2）安装 Typecho 成功后，打开 Typecho 数据库，导入先前从 WordPress 数据库导出的文件。&lt;br />
+（3）按照&lt;a href="http://docs.typecho.org/import">官方教程&lt;/a>安装 WordPress to Typecho 插件，填写相关参数，转换数据。&lt;br />
+（4）打开 Typecho 数据库，删除所有第（2）步中导入的项目（即wp_开头的项目）。&lt;/p>
+&lt;h4 id="4-为-typecho-博客添加-cloudflare-cdn">&lt;strong>4. 为 Typecho 博客添加 Cloudflare CDN&lt;/strong>&lt;/h4>
+&lt;p>（1）我在一个不支持 SSL 的主机空间试过，Typecho 博客添加 Cloudflare CDN 并启用 https 之后，后台管理页面会打不开（如果主机空间支持 SSL 则没有问题），解决方法是，编辑站点根目录下的文件 config.inc.php 加入下面一行配置：&lt;/p>
+&lt;pre tabindex="0">&lt;code>/** 开启 HTTPS */
+define(&amp;#39;__TYPECHO_SECURE__&amp;#39;,true);
+&lt;/code>&lt;/pre>&lt;p>这样后台管理页面就能打开了。&lt;/p>
+&lt;p>（2）添加 Cloudflare CDN 后，评论 IP 显示的是 Cloudflare CDN 的代理 IP 而不是访客真实 IP，显示访客真实 IP 的方法见这篇文章：&lt;a href="https://www.typecho.wiki/typecho-configuring-cdn-to-get-visitors-real-ip.html">Typecho 配置 CDN 后获取访客真实 IP&lt;/a>。&lt;/p></content:encoded><dc:creator>乌云盖雪</dc:creator><category>Typecho</category><category>WordPress</category><category>Cloudflare</category><category>CDN</category><category>SSL</category><category>IT</category><category>互联网</category><category>笔记</category><category>IT 和互联网</category><category>博客建站</category></item><item><title>WordPress 使用 Cloudflare 遇到的几个问题及解决方法</title><link>https://wygxmew.github.io/posts/wordpress-cloudflare-cdn-ssl/</link><pubDate>Sat, 22 Sep 2018 15:01:21 +0800</pubDate><atom:modified>Sat, 22 Sep 2018 15:01:21 +0800</atom:modified><guid>https://wygxmew.github.io/posts/wordpress-cloudflare-cdn-ssl/</guid><description>最近使用 Cloudflare 为WordPress博客添加了免费 CDN 和 SSL 服务，在此过程中遇到的一些问题和解决方法记录如下。 Cloudflare Flexible SSL 开启 Always use HTTPS 后导致 WordPress 网站无限循环重定</description><content:encoded>&lt;p>最近使用 Cloudflare 为WordPress博客添加了免费 CDN 和 SSL 服务，在此过程中遇到的一些问题和解决方法记录如下。&lt;/p>
+&lt;ul>
+&lt;li>Cloudflare Flexible SSL 开启 Always use HTTPS 后导致 WordPress 网站无限循环重定向。解决办法是，如果主机空间支持 SSL，那么把 Cloudflare 的 SSL 设为 Full 即可；如果主机不支持 SSL，安装并启用 CloudFlare Flexible SSL 插件即可解决问题。&lt;/li>
+&lt;li>如果主机空间不支持 SSL，那么在 Cloudflare 只能开启 Flexible SSL，使用 https 访问 WordPress 后台时，媒体库中的图片缩略图若无法显示（而用 http 访问后台可显示），那么安装并启用 Really Simple SSL 插件可显示缩略图。&lt;/li>
+&lt;li>我用手机浏览器 Safari 访问我的博客，直接输入域名不带 https，有时会出现浮动广告，而用 https打开则没有广告。我发现在 Cloudflare 中开启 HSTS 广告就没有了。&lt;/li>
+&lt;li>使用 Cloudflare CDN 后，网站后台无法获取访客真实 IP，评论和访问统计插件显示的访客 IP 都是 CDN 的 IP。解决办法有两种，一种是安装插件，另一种是修改代码，具体看这篇文章：&lt;a href="https://www.freehao123.com/cdn-ip/">网站使用 CDN 服务后统计网站真实的用户访问情况获取真实 IP&lt;/a>。我用的是安装插件的方法，如果 Cloudflare 的 SSL 是 Flexible 模式，则安装启用 CloudFlare Flexible SSL 插件，如果是 Full 模式，则安装 Cloudflare 插件，然后评论和流量统计插件就可以显示真实 IP 了。&lt;/li>
+&lt;/ul>
+&lt;p>需要注意的是如果采用 Cloudflare Flexible SSL 模式，那么安装插件和开启有关功能的顺序不能乱来，正确的顺序是：安装并启用 CloudFlare Flexible SSL 插件 &amp;raquo; 安装并启用 Really Simple SSL 插件 &amp;raquo; 开启 HSTS，开启 Always use HTTPS 要在启用 CloudFlare Flexible SSL 插件之后，如果想要关闭相关的插件或功能，顺序就应该反过来。不按照上面的顺序操作，可能会导致网站打不开。&lt;/p></content:encoded><dc:creator>乌云盖雪</dc:creator><category>WordPress</category><category>Cloudflare</category><category>CDN</category><category>SSL</category><category>IT</category><category>互联网</category><category>笔记</category><category>IT 和互联网</category><category>博客建站</category></item><item><title>极端体验之1G内存装 Win7</title><link>https://wygxmew.github.io/posts/thin-pc/</link><pubDate>Fri, 21 Sep 2018 12:28:52 +0800</pubDate><atom:modified>Fri, 21 Sep 2018 12:28:52 +0800</atom:modified><guid>https://wygxmew.github.io/posts/thin-pc/</guid><description>前几天把十年前只有 1G 内存的 XP 本装上了 Win7 精简版 Windows Thin PC （微软官方出品），装完后磁盘占用不到 4G，内存 500M 多一点，感觉要比原来的 XP 系统流畅，最重要的</description><content:encoded>&lt;p>前几天把十年前只有 1G 内存的 XP 本装上了 Win7 精简版 &lt;a href="https://baike.baidu.com/item/Windows%20Thin%20PC">Windows Thin PC&lt;/a> （微软官方出品），装完后磁盘占用不到 4G，内存 500M 多一点，感觉要比原来的 XP 系统流畅，最重要的是能用 Chrome 了。因为占用资源少，Thin PC 适合老机器，或者替代 Win7 装虚拟机。开始我想装 Linux 系统，&lt;del>可是该系统科学上网很不方便&lt;/del>，所以最后装了 Thin PC。这样我的这台本来要丢垃圾箱的老笔记本，现在有了一点存在的价值。&lt;/p>
+&lt;p>装完系统后，Chrome 打开两个以上标签页就崩溃，后来发现设置一下虚拟内存就好了，原来 Thin PC 默认不设虚拟内存，超出内存程序就会崩溃；还有，系统（从官网下载的）自带的图片浏览器不能用，不知什么原因打不开图片，需要安装第三方看图软件。&lt;/p>
+&lt;p>另外一个发现是，在 1G 内存的情况下，Chrome 还是要比 Firefox 快，Firefox 经常卡住，没有响应，而 Chrome 不会卡住。此外发现一款比 Chrome、Firefox、Opera 占用内存更小的浏览器 Vivaldi，在 1G 内存不设虚拟内存的情况下，上述三个浏览器都只能打开一个标签页（以我的博客来测试），再打开第二个就会崩溃，而 Vivaldi 可以打开3个标签页。可惜 Vivaldi 太小众，我担心安全问题，不放心把密码保存在里面。&lt;/p>
+&lt;p>更新：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Thin PC 系统无法查看图片的原因与&lt;a href="https://wygxmew.github.io/posts/thin-pc-firefox-ie-audio-video/">解决 Windows Thin PC 系统中 Firefox 和 IE 播放音频和视频的问题&lt;/a>一文中提到的原因相同，解决方法类似。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Thin PC 只是 WES7（Windows Embedded Standard 7）的一个官方定制版。WES7 是组件化的 Win7，除了包含 Win7 的全部功能，还有嵌入式特性，比如快速启动，降低存储介质损耗，在异常掉电的状态下保护磁盘和系统文件等，最主要的可自行定制各种组件，达到与 Thin PC 同样的资源占用，不过 Thin PC 只有32位系统，而 WES7 可以选64位系统，现在越来越多的软件不兼容32位系统，所以我已经把虚拟机的 Thin PC 换成了64位的 WES7 系统。我安装 WES7 系统时参考了如下两篇文章（ 中文语言包请自行网上搜索，其它问题亦请自行网上搜索，基本都能解决）：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://www.doczj.com/doc/454898531.html">Windows Embedded Standard 7 安装教程&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://blog.csdn.net/weixin_34278190/article/details/91574859">使用 Windows Embedded Standard 7 代替 windows 7&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol></content:encoded><dc:creator>乌云盖雪</dc:creator><category>Thin PC</category><category>Windows</category><category>IT</category><category>笔记</category><category>IT 和互联网</category></item></channel></rss>

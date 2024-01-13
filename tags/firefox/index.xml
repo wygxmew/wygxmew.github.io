@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>Firefox on 乌云盖雪</title><link>https://wygxmew.github.io/tags/firefox/</link><description>Recent content in Firefox on 乌云盖雪</description><generator>Hugo -- gohugo.io</generator><language>zh</language><copyright>&amp;copy; 2006 - {year} 乌云盖雪</copyright><lastBuildDate>Thu, 03 Jun 2021 20:32:07 +0800</lastBuildDate><atom:link href="https://wygxmew.github.io/tags/firefox/index.xml" rel="self" type="application/rss+xml"/><item><title>Firefox 89 的全新 Proton 界面</title><link>https://wygxmew.github.io/posts/firefox-89-new-proton-ui/</link><pubDate>Thu, 03 Jun 2021 20:32:07 +0800</pubDate><atom:modified>Thu, 03 Jun 2021 20:32:07 +0800</atom:modified><guid>https://wygxmew.github.io/posts/firefox-89-new-proton-ui/</guid><description>今天发现 Firefox 更新到了 89.0 版本，采用了全新设计的 Proton 界面。 如果嫌新 UI 占用空间，想使用紧凑布局，只需在地址栏键入 about:config，选择接受风险</description><content:encoded>&lt;p>今天发现 Firefox 更新到了 89.0 版本，采用了全新设计的 Proton 界面。&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>如果嫌新 UI 占用空间，想使用紧凑布局，只需在地址栏键入 about:config，选择接受风险并继续，然后搜索 browser.compactmode.show，将其值切换为 true，然后在「定制工具栏」界面切换到紧凑布局即可。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>如果不喜欢新的 Proton 界面 ，可以将 browser.proton.enabled 的值切换为 false，具体操作步骤同上，即可关闭新 UI 恢复到旧 UI。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;br/>
+&lt;p>参考：&lt;a href="https://v2ex.com/t/780758">Firefox 89 更新了设计语言，感觉不错&lt;/a>&lt;/p></content:encoded><dc:creator>乌云盖雪</dc:creator><category>Firefox</category><category>UI</category><category>IT</category><category>笔记</category><category>IT 和互联网</category></item><item><title>解决 Windows Thin PC 系统中 Firefox 和 IE 播放音频和视频的问题</title><link>https://wygxmew.github.io/posts/thin-pc-firefox-ie-audio-video/</link><pubDate>Tue, 09 Apr 2019 12:00:07 +0800</pubDate><atom:modified>Tue, 09 Apr 2019 12:00:07 +0800</atom:modified><guid>https://wygxmew.github.io/posts/thin-pc-firefox-ie-audio-video/</guid><description>今天为我的 Windows Thin PC 系统安装了一些功能组件，解决了一系列问题。 使用 Thin PC 一段时间了，有一个问题一直困扰着我，我的 Thin PC 上的 Firefox / IE11 无法播放一些 HTML5 音频和</description><content:encoded>&lt;p>今天为我的 &lt;a href="https://baike.baidu.com/item/Windows%20Thin%20PC">Windows Thin PC&lt;/a> 系统安装了一些功能组件，解决了一系列问题。&lt;/p>
+&lt;p>使用 Thin PC 一段时间了，有一个问题一直困扰着我，我的 Thin PC 上的 Firefox / IE11 无法播放一些 HTML5 音频和视频（但 Chrome 可以），比如，我博客上的 HTML5 音频标记为“&lt;strong>错误：音频类型不受支持或文件路径无效&lt;/strong>”，Twitter 上的视频则提示“&lt;strong>我们无法在这个浏览器上播放视频，请尝试换用其它浏览器。&lt;/strong>”然而 Youtube 上的视频则可以播放，奇怪的很。因为这个原因再加上 Firefox 在我这台 Thin PC 电脑上的速度不如 Chrome 快，所以一直在用 Chrome。然而最近发现 Firefox 升级后打开我博客的速度要比 Chrome 快（可是在另一台配置较高的 Win10 上则相反），因此打算在我的 Thin PC 电脑上主要使用 Firefox，于是经过一番查找终于找到了问题的症结所在： Windows Thin PC 没有安装相应的音频和视频组件。&lt;/p>
+&lt;p>经测试，安装如下组件可解决上述在 Firefox 中无法播放 Twitter 视频的问题，但 IE 中问题依旧。&lt;/p>
+&lt;ol>
+&lt;li>winemb-premiumcodecs-dolby-ac3-audioencoder.cab&lt;/li>
+&lt;li>WinEmb-PremiumCodecs-MPEG2andDolbyDecoder.cab&lt;/li>
+&lt;li>WinEmb-PremiumCodecs-MPEG2-Decoder.cab&lt;/li>
+&lt;li>winemb-premiumcodecs-mpeg2-encoder.cab&lt;/li>
+&lt;li>WinEmb-PremiumCodecs-MPEG3.cab&lt;/li>
+&lt;li>WinEmb-PremiumCodecs-MPEG4.cab&lt;/li>
+&lt;li>winemb-premiumcodecs-wmv.cab&lt;/li>
+&lt;/ol>
+&lt;p>安装 winemb-media-support.cab 组件解决了有些 HTML5 音频和视频在 Thin PC 的 Firefox / IE11 中无法播放的问题。&lt;/p>
+&lt;p>另外安装 winemb-photos-viewer.cab 组件可解决 Thin PC 不使用第三方图片浏览软件无法查看图片的问题，安装这个组件后电脑中图片的右键菜单会出现两个“预览”，我用右键管家解决了这个问题。&lt;/p>
+&lt;p>具体安装步骤和方法参照如下文章：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="http://www.360doc.com/content/17/0627/11/1892865_666882855.shtml">开启 Windows Thin PC 被关闭的 Windows 功能&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://blog.51cto.com/rdsrv/843455">Windows Thin PC 安装功能组件&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://blog.51cto.com/rdsrv/842897">Windows Thin PC 中文化&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>再安装&lt;a href="https://laod.cn/tools/adobe-flash-player-ax-np-pp-31-0-0-153.html">去广告和捆绑的 Adobe Flash Player&lt;/a>，Thin PC 系统中 Firefox 应该就可以播放几乎所有网页的音视频了，这就完美了。&lt;/p></content:encoded><dc:creator>乌云盖雪</dc:creator><category>Thin PC</category><category>Windows</category><category>Firefox</category><category>IE</category><category>IT</category><category>笔记</category><category>IT 和互联网</category></item></channel></rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>Typecho on 乌云盖雪</title><link>https://wygxmew.github.io/tags/typecho/</link><description>Recent content in Typecho on 乌云盖雪</description><generator>Hugo -- gohugo.io</generator><language>zh</language><copyright>&amp;copy; 2006 - {year} 乌云盖雪</copyright><lastBuildDate>Mon, 17 Dec 2018 11:50:35 +0800</lastBuildDate><atom:link href="https://wygxmew.github.io/tags/typecho/index.xml" rel="self" type="application/rss+xml"/><item><title>安装并迁移到 Typecho 遇到的一些问题及解决方法</title><link>https://wygxmew.github.io/posts/install-and-migrate-to-typecho/</link><pubDate>Mon, 17 Dec 2018 11:50:35 +0800</pubDate><atom:modified>Mon, 17 Dec 2018 11:50:35 +0800</atom:modified><guid>https://wygxmew.github.io/posts/install-and-migrate-to-typecho/</guid><description>最近把博客从 WordPress 迁移到 Typecho 平台，遇到的一些问题及解决方法记录如下： 1. 安装时卡在第2步初始化配置页面 （1）卡在数据库连接页面，提示“对不起，无法连</description><content:encoded>&lt;p>最近把博客从 WordPress 迁移到 Typecho 平台，遇到的一些问题及解决方法记录如下：&lt;/p>
+&lt;h4 id="1-安装时卡在第2步初始化配置页面">&lt;strong>1. 安装时卡在第2步初始化配置页面&lt;/strong>&lt;/h4>
+&lt;p>（1）卡在数据库连接页面，提示“对不起，无法连接数据库，请先检查数据库配置再继续进行安装”。解决方法是，把数据库密码重新填写一遍然后继续进行就可以了，只刷新不重新填写数据库密码是不管用的。并不是密码输入错误，我先后试了好几遍。&lt;/p>
+&lt;p>（2）卡在数据库配置页面，提示“确认您的配置 数据库配置”。这个时候不要关闭当前页面，在 install.php 文件的第56行加入如下代码，然后刷新卡住的数据库配置页面即可解决问题。&lt;/p>
+&lt;pre tabindex="0">&lt;code>ob_start();
+&lt;/code>&lt;/pre>&lt;h4 id="2-开启地址重写">&lt;strong>2. 开启地址重写&lt;/strong>&lt;/h4>
+&lt;p>安装完毕，在 Typecho 后台永久链接设置里开启地址重写功能后，除了后台和主页外其它页面均出现404错误，我所在主机服务器是 Apache，解决方法是，在网站根目录下新建 .htaccess，输入如下内容：&lt;/p>
+&lt;pre tabindex="0">&lt;code>RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [L,E=PATH_INFO:$1]
+&lt;/code>&lt;/pre>&lt;h4 id="3-从-wordpress-迁移到-typecho">&lt;strong>3. 从 WordPress 迁移到 Typecho&lt;/strong>&lt;/h4>
+&lt;p>网上查了一下，好像都说要用两个数据库，一个 WordPress 的，一个 Typecho 的。但是我的空间只允许一个数据库，那怎么办？没关系，经本人尝试，发现只用一个数据库也可以。操作步骤如下：&lt;/p>
+&lt;p>（1）安装 Typecho 前，先从 WordPress 数据库导出数据。&lt;br />
+（2）安装 Typecho 成功后，打开 Typecho 数据库，导入先前从 WordPress 数据库导出的文件。&lt;br />
+（3）按照&lt;a href="http://docs.typecho.org/import">官方教程&lt;/a>安装 WordPress to Typecho 插件，填写相关参数，转换数据。&lt;br />
+（4）打开 Typecho 数据库，删除所有第（2）步中导入的项目（即wp_开头的项目）。&lt;/p>
+&lt;h4 id="4-为-typecho-博客添加-cloudflare-cdn">&lt;strong>4. 为 Typecho 博客添加 Cloudflare CDN&lt;/strong>&lt;/h4>
+&lt;p>（1）我在一个不支持 SSL 的主机空间试过，Typecho 博客添加 Cloudflare CDN 并启用 https 之后，后台管理页面会打不开（如果主机空间支持 SSL 则没有问题），解决方法是，编辑站点根目录下的文件 config.inc.php 加入下面一行配置：&lt;/p>
+&lt;pre tabindex="0">&lt;code>/** 开启 HTTPS */
+define(&amp;#39;__TYPECHO_SECURE__&amp;#39;,true);
+&lt;/code>&lt;/pre>&lt;p>这样后台管理页面就能打开了。&lt;/p>
+&lt;p>（2）添加 Cloudflare CDN 后，评论 IP 显示的是 Cloudflare CDN 的代理 IP 而不是访客真实 IP，显示访客真实 IP 的方法见这篇文章：&lt;a href="https://www.typecho.wiki/typecho-configuring-cdn-to-get-visitors-real-ip.html">Typecho 配置 CDN 后获取访客真实 IP&lt;/a>。&lt;/p></content:encoded><dc:creator>乌云盖雪</dc:creator><category>Typecho</category><category>WordPress</category><category>Cloudflare</category><category>CDN</category><category>SSL</category><category>IT</category><category>互联网</category><category>笔记</category><category>IT 和互联网</category><category>博客建站</category></item></channel></rss>

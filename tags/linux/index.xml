@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>Linux on 乌云盖雪</title><link>https://wygxmew.github.io/tags/linux/</link><description>Recent content in Linux on 乌云盖雪</description><generator>Hugo -- gohugo.io</generator><language>zh</language><copyright>&amp;copy; 2006 - {year} 乌云盖雪</copyright><lastBuildDate>Sat, 22 Oct 2022 05:26:22 +0800</lastBuildDate><atom:link href="https://wygxmew.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>配置 Plank Dock 常见问题</title><link>https://wygxmew.github.io/posts/plank-configuration/</link><pubDate>Sat, 22 Oct 2022 05:26:22 +0800</pubDate><atom:modified>Sat, 22 Oct 2022 05:26:22 +0800</atom:modified><guid>https://wygxmew.github.io/posts/plank-configuration/</guid><description>Plank 是目前为止 Linux 桌面最简洁的、最轻量的 Dock 工具，是一个类似 MacOS 系统中的 Dock 程序坞效果的应用。 对 Plank 进行配置，将鼠标放在 Dock 上面，按住 Ctrl 键同时点击鼠标右键</description><content:encoded>&lt;p>&lt;a href="https://wiki.archlinux.org/title/Plank">Plank&lt;/a> 是目前为止 Linux 桌面最简洁的、最轻量的 Dock 工具，是一个类似 MacOS 系统中的 Dock 程序坞效果的应用。&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>对 Plank 进行配置，将鼠标放在 Dock 上面，按住 Ctrl 键同时点击鼠标右键，这时，会弹出应用设置菜单，选择首选项，进入 Plank 的设置页面。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>如果有些软件无法添加 logo，可以用文件管理器打开 /usr/share/application，直接拖拽即可。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>如果要更改 Plank 中显示的任何应用程序图标，一种方法是在 /usr/share/applications 中查找该应用程序的 .desktop 文件并对其进行编辑，专门修改了表示 Icon = ? 的参数才行，但当我们更新应用程序并更新 /usr/share/applications 的 .desktop 文件时，将恢复到默认情况下显示的图标，然后我们将不得不再次对其进行更改。为避免这种情况，应将应用程序的 .desktop 文件复制到 /home/用户名/.local/share/applications 目录中并编辑该新文件，然后将该文件拖曳至 Plank 面板，以这种方式，当 /usr/shared/applications 的 .desktop 文件随更新而更改时，我们在 /home/用户名/.local/share/applications 中的文件（Plank 优先考虑）不会发生变化。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Xfce 桌面环境安装 Plank 后桌面有一道阴影，解决办法是依次点击系统“设置管理器-&amp;gt;窗口管理器微调-&amp;gt;合成器”，然后取消“在 dock 窗口下显示阴影”选项前面的勾即可。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>参考：&lt;a href="https://blog.desdelinux.net/zh-CN/%E5%A6%82%E4%BD%95%E8%87%AA%E5%AE%9A%E4%B9%89%E6%88%96%E6%9B%B4%E6%94%B9%E6%9C%A8%E6%9D%BF%E5%9B%BE%E6%A0%87/">如何自定义或更改 Plank 图标&lt;/a>&lt;/p></content:encoded><dc:creator>乌云盖雪</dc:creator><category>Linux</category><category>IT</category><category>笔记</category><category>IT 和互联网</category></item><item><title>pacman 和 yay 常用命令</title><link>https://wygxmew.github.io/posts/pacman-yay-common-commands/</link><pubDate>Wed, 28 Sep 2022 22:50:22 +0800</pubDate><atom:modified>Wed, 28 Sep 2022 22:50:22 +0800</atom:modified><guid>https://wygxmew.github.io/posts/pacman-yay-common-commands/</guid><description>Pacman 是一个功能强大的软件包管理器，作为 Arch Linux 发行版的一部分。简单来说，就是和 apt-get 之于Ubuntu一样，pacman 就是 Arch 的 apt-get。pacm</description><content:encoded>&lt;p>Pacman 是一个功能强大的软件包管理器，作为 Arch Linux 发行版的一部分。简单来说，就是和 apt-get 之于Ubuntu一样，pacman 就是 Arch 的 apt-get。pacman 的常用命令如下：&lt;/p>
+&lt;h3 id="更新系统">&lt;strong>更新系统&lt;/strong>&lt;/h3>
+&lt;p>pacman -Syu &lt;em># 对整个系统进行更新。&lt;/em>&lt;br />
+pacman -Sy &lt;em># 下载远程仓库最新软件列表到本地，将本地的包数据库与远程的仓库进行同步。&lt;/em>&lt;br />
+pacman -Su &lt;em># 升级所有已安装的软件包。&lt;/em>&lt;/p>
+&lt;h3 id="安装软件包">&lt;strong>安装软件包&lt;/strong>&lt;/h3>
+&lt;p>pacman -S 软件包名 &lt;em># 安装软件包。也可以同时安装多个包，只需以空格分隔包名即可。&lt;/em>&lt;br />
+pacman -Sy 软件包名 &lt;em># 在同步包数据库（数据库即所有软件列表）后再执行安装。&lt;/em>&lt;br />
+pacman -Sv 软件包名 &lt;em># 在显示一些操作信息后执行安装。&lt;/em>&lt;br />
+pacman -U 软件包名.pkg.tar.gz &lt;em># 安装本地软件包，其扩展名为 pkg.tar.gz。&lt;/em>&lt;br />
+pacman -U http://url/package_name-version.pkg.tar.gz &lt;em># 安装一个远程包（不在 pacman 配置的源里面）。&lt;/em>&lt;/p>
+&lt;h3 id="卸载软件包">&lt;strong>卸载软件包&lt;/strong>&lt;/h3>
+&lt;p>pacman -R 软件包名 &lt;em># 该命令只删除软件包，保留其全部已经安装的依赖关系。&lt;/em>&lt;br />
+pacman -Rv 软件包名 &lt;em># 删除软件包，并显示详细的信息。&lt;/em>&lt;br />
+pacman -Rs 软件包名 &lt;em># 删除软件包，同时删除本机上只有该软件依赖而没有被其他已安装软件包使用的的软件。&lt;/em>&lt;br />
+pacman -Rsc 软件包名 &lt;em># 删除软件包，并删除所有依赖这个软件的程序，慎用。&lt;/em>&lt;br />
+pacman -Ru 软件包名 &lt;em># 删除软件包，同时删除不再被任何软件所需要的依赖。&lt;/em>&lt;br />
+pacman -Rd 软件包名 &lt;em># 在删除软件包时不检查依赖。&lt;/em>&lt;br />
+pacman -Rn 软件包名 &lt;em># 缺省地，pacman会备份被删除程序的配置文件，将它们加上 pacsave 扩展名。如果在删除软件包时要同时删除相应的配置文件（这种行为在基于 Debian 的系统中称为清除 purging），可是使用该命令。&lt;/em>&lt;br />
+pacman -Rsn 软件包名 &lt;em># 该命令删除一个软件包、它的配置文件以及所有不再需要的依赖。-s参数用来删除当前无用的依赖。&lt;/em>&lt;/p>
+&lt;h3 id="搜索软件包">&lt;strong>搜索软件包&lt;/strong>&lt;/h3>
+&lt;p>pacman -Ss 关键字 &lt;em># 在仓库中搜索含关键字的软件包（本地已安装的会标记）。&lt;/em>&lt;br />
+pacman -Qs 关键字 &lt;em># 搜索已安装的软件包。&lt;/em>&lt;br />
+pacman -Qu &lt;em># 列出所有可升级的软件包。&lt;/em>&lt;br />
+pacman -Qt &lt;em># 列出不被任何软件要求的软件包。&lt;/em>&lt;/p>
+&lt;p>查询软件信息&lt;/p>
+&lt;p>pacman -Q 软件包名 &lt;em># 查看软件包是否已安装，已安装则显示软件包名称和版本。&lt;/em>&lt;br />
+pacman -Qi 软件包名 &lt;em># 查看某个软件包信息，显示较为详细的信息，包括描述、构架、依赖、大小等等。&lt;/em>&lt;br />
+pacman -Ql 软件包名 &lt;em># 列出软件包内所有文件，包括软件安装的每个文件、文件夹的名称和路径。&lt;/em>&lt;br />
+pacman -Qo /path/to/a/file &lt;em># 可以通过查询数据库获知目前你的文件系统中某个文件是属于哪个软件包。&lt;/em>&lt;br />
+pacman -Qdt &lt;em># 罗列所有不再作为依赖的软件包（孤立 orphans）。&lt;/em>&lt;/p>
+&lt;h3 id="软件包组">&lt;strong>软件包组&lt;/strong>&lt;/h3>
+&lt;p>pacman -Sg &lt;em># 列出软件仓库上所有的软件包组。&lt;/em>&lt;br />
+pacman -Qg &lt;em># 列出本地已经安装的软件包组和子包。&lt;/em>&lt;br />
+pacman -Sg 软件包组 &lt;em># 查看某软件包组所包含的所有软件包。&lt;/em>&lt;br />
+pacman -Qg 软件包组 &lt;em># 和 pacman -Sg 软件包组完全一样。&lt;/em>&lt;/p>
+&lt;p>很多人建议通过安装软件组来安装工具链，例如：&lt;/p>
+&lt;p>pacman -S mingw-w64-x86_64-toolchain&lt;br />
+pacman -S mingw-w64-i686-toolchain&lt;br />
+pacman -S mingw-w64-x86_64-qt5&lt;br />
+pacman -S base-devel&lt;/p>
+&lt;h3 id="清理缓存">&lt;strong>清理缓存&lt;/strong>&lt;/h3>
+&lt;p>pacman -Sc &lt;em># 清理未安装的包文件，包文件位于 /var/cache/pacman/pkg/ 目录。&lt;/em>&lt;br />
+pacman -Scc &lt;em># 清理所有的缓存文件。警告：关于 pacman -Scc，仅在你确定不需要做任何软件包降级工作时才这样做。pacman -Scc 会从缓存中删除所有软件包。&lt;/em>&lt;/p>
+&lt;p>要了解更详细的参数开关可以 pacman –help 或者 man pacman。&lt;/p>
+&lt;h3 id="配置和常用选项">&lt;strong>配置和常用选项&lt;/strong>&lt;/h3>
+&lt;p>Pacman 的配置文件位于/etc/pacman.conf。关于配置文件的进一步信息可以用 man pacman.conf 查看。&lt;br />
+常用选项都在[options]段。阅读 man 手册或者查看缺省的 pacman.conf 可以获得有关信息和用途。&lt;/p>
+&lt;p>跳过升级软件包&lt;/p>
+&lt;p>如果由于某种原因，你不希望升级某个软件包（如果有多个包不需要升级，只需以空格分隔包名即可），可以加入内容如下：&lt;br />
+IgnorePkg = 软件包名&lt;/p>
+&lt;p>跳过升级软件包组&lt;/p>
+&lt;p>和软件包一样，你也可以象这样跳过升级某个软件包组：&lt;br />
+IgnoreGroup = gnome&lt;/p>
+&lt;h3 id="附注">&lt;strong>附注&lt;/strong>&lt;/h3>
+&lt;p>Arch Linux 的版本库里面包括：&lt;br />
+core &lt;em># 核心软件包。&lt;/em>&lt;br />
+extra &lt;em># 其他常用软件。&lt;/em>&lt;br />
+community &lt;em># 社区软件包，譬如 Mysql 等。&lt;/em>&lt;br />
+testing &lt;em># 正在测试阶段，还没有正式加入源的软件包。通常软件版本比较新，但是不是非常稳定。&lt;/em>&lt;br />
+release &lt;em># 已经发布的软件包。&lt;/em>&lt;br />
+unstable &lt;em># 非正式的软件包，可能包括以前版本的软件或者测试软件。&lt;/em>&lt;/p>
+&lt;p>因为Pacman的软件都是从源里面更新，因此在 /etc/pacman.d 里面配置这些软件源的地址。在 /etc/pacman.d 目录里面分别有上面几种软件类型对应的文件名，可以自己手工配置这些软件源的地址。&lt;/p>
+&lt;p>Pacman 是一个功能强大的包管理器，作为基于 Arch 的发行版的默认设置提供，但它缺乏从 Arch 用户存储库 (AUR) 下载包的功能。 AUR 是一个社区维护的存储库，以安装脚本的形式提供数千个第三方包，也称为 PKGBUILD。要使用这些 PKGBUILD 安装包，我们需要像 yay 这样的 AUR 助手。 yay 可以执行 pacman 的几乎所有操作，并在此基础上添加了很多额外用法。yay 的用法和 pacman 完全类似，上述所有 pacman xxx 命令，均可替换成 yay xxx 执行。yay 安装命令不需要加 sudo。&lt;/p>
+&lt;p>&lt;strong>yay 的常用命令&lt;/strong>&lt;/p>
+&lt;p>yay 软件包名或搜索词 &lt;em># 从仓库和 AUR 中交互式搜索和安装软件包。&lt;/em>&lt;br />
+yay &lt;em># 同步并更新所有来自仓库和 AUR 的软件包。后面不跟任何参数时，yay 会执行操作 yay -Syu，它会先调用 pacman 更新源的数据库、更新所有从源内安装的软件包，并检查你的 AUR 包有没有更新。&lt;/em>&lt;br />
+yay -Sua &lt;em># 只同步和更新 AUR 软件包。&lt;/em>&lt;br />
+yay -S 软件包名 &lt;em># 从仓库和 AUR 中安装一个新的软件包。&lt;/em>&lt;br />
+yay -Ss 关键词 &lt;em># 从仓库和 AUR 中搜索软件包数据库中的关键词。&lt;/em>&lt;br />
+yay -Ps &lt;em># 显示已安装软件包和系统健康状况的统计数据。&lt;/em>&lt;/p>
+&lt;p>参考：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://hustlei.github.io/2018/11/msys2-pacman.html">pacman常用命令&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://ipcmen.com/pacman">pacman命令详解&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.linux-man.cn/command/yay/">Linux yay 命令手册&lt;/a>&lt;/li>
+&lt;/ul></content:encoded><dc:creator>乌云盖雪</dc:creator><category>Linux</category><category>IT</category><category>笔记</category><category>IT 和互联网</category></item><item><title>VLC 播放器无法退出及丢帧问题</title><link>https://wygxmew.github.io/posts/vlc-does-not-exit-and-video-dropping-frames/</link><pubDate>Tue, 20 Apr 2021 22:32:07 +0800</pubDate><atom:modified>Tue, 20 Apr 2021 22:32:07 +0800</atom:modified><guid>https://wygxmew.github.io/posts/vlc-does-not-exit-and-video-dropping-frames/</guid><description>使用 Manjaro Linux（KDE 桌面环境）很长时间了，但有一个问题一直困扰着我，它的默认播放器 VLC 播放视频关闭后无法退出，其图标仍停留在系统托盘中，而</description><content:encoded>&lt;p>使用 Manjaro Linux（KDE 桌面环境）很长时间了，但有一个问题一直困扰着我，它的默认播放器 VLC 播放视频关闭后无法退出，其图标仍停留在系统托盘中，而且无法打开新的视频，还有一个问题就是有的视频用 VLC 播放非常卡，时时出现丢帧现象，然而在 Windows 10 下用别的播放器比如 PotPlayer 播放却没有这个问题，这说明不是硬件问题。所以我在 Manjaro 中安装了别的播放器，试了很多款，最终选择了 bomi 播放器，其它的要么掉帧卡顿要么颜值不行。今天闲着无聊的时候终于找到了解决 VLC 无法退出及丢帧卡顿问题的解决办法，简单设置一下即可，打开 VLC 播放器，依次点击：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>工具&amp;gt;偏好设置&amp;gt;视频&amp;gt;output&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>工具&amp;gt;偏好设置&amp;gt;输入/编解码器&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>然后选择与系统相匹配的选项，可能是 XCB 或 VDPAU，上面两项设置我选的是“XVideo 输出 (XCB)“以及“自动”，因为我查看我的 Manjaro 系统信息，图形平台是 X11，如果不清楚的话可以逐个试一下。这样设置之后，上面的两个问题都解决了。&lt;/p>
+&lt;p>参考：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://forum.manjaro.org/t/vlc-does-not-end-process-after-closed/14385">Vlc does not end process after closed&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.dazhuanlan.com/2020/02/06/5e3bfaaaedce0/">mplayer视频输出选项&lt;/a>&lt;/li>
+&lt;/ul></content:encoded><dc:creator>乌云盖雪</dc:creator><category>VLC</category><category>Manjaro</category><category>Linux</category><category>IT</category><category>笔记</category><category>IT 和互联网</category></item><item><title>解决 Mellow 在 Manjaro 中开机自启后无法自动连接的问题</title><link>https://wygxmew.github.io/posts/mellow-failed-to-connect-automatically-after-manjaro-booting/</link><pubDate>Tue, 04 Feb 2020 19:50:25 +0800</pubDate><atom:modified>Tue, 04 Feb 2020 19:50:25 +0800</atom:modified><guid>https://wygxmew.github.io/posts/mellow-failed-to-connect-automatically-after-manjaro-booting/</guid><description>最近在 Manjaro Linux 中安装了透明代理工具 Mellow，把 Mellow 添加到开机自启列表后，在设置中勾选 Auto Launch 和 Auto Connect ，然后开机重启，Mellow 无法自动连接，并弹出</description><content:encoded>&lt;p>最近在 Manjaro Linux 中安装了透明代理工具 Mellow，把 Mellow 添加到开机自启列表后，在设置中勾选 Auto Launch 和 Auto Connect ，然后开机重启，Mellow 无法自动连接，并弹出如下提示：&lt;/p>
+&lt;blockquote>
+&lt;p>Failed to find the default gateway，please ensure your network is reachable. You may try to restart/reconnect the network/wifi.&lt;/p>
+&lt;/blockquote>
+&lt;p>我是通过如下设置解决问题的：右击任务栏中的网络连接图标,，点击“&lt;strong>配置网络连接&lt;/strong>”，在有线连接或WiFi 的安全选项中把“&lt;strong>仅对当前用户保存密码（加密）&lt;/strong>”改成“&lt;strong>为所有用户保存密码（不加密）&lt;/strong>”。然后重启，Mellow 就能自动连接，不再弹出上述提示了。&lt;/p></content:encoded><dc:creator>乌云盖雪</dc:creator><category>Mellow</category><category>Manjaro</category><category>Linux</category><category>IT</category><category>笔记</category><category>IT 和互联网</category></item></channel></rss>

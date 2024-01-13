@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /about/
+Allow: /posts/
+Allow: /links/
+Disallow: /page/
+Disallow: /archive/
+Disallow: /categories/
+Disallow: /tags/
+Disallow: /series/
+Disallow: /gallery/
+Disallow: /images/
+Disallow: /css/
+Disallow: /js/
+Disallow: /fonts/
+Disallow: /favicon/
+Disallow: /hitokoto/
+Disallow: /index.html
+Disallow: /articles/
+Disallow: /blog/
+Disallow: /docs/
+Disallow: /showcase/
+
+Sitemap: https://wygxmew.github.io/sitemap.xml

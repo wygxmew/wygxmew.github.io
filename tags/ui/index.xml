@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>UI on 乌云盖雪</title><link>https://wygxmew.github.io/tags/ui/</link><description>Recent content in UI on 乌云盖雪</description><generator>Hugo -- gohugo.io</generator><language>zh</language><copyright>&amp;copy; 2006 - {year} 乌云盖雪</copyright><lastBuildDate>Thu, 03 Jun 2021 20:32:07 +0800</lastBuildDate><atom:link href="https://wygxmew.github.io/tags/ui/index.xml" rel="self" type="application/rss+xml"/><item><title>Firefox 89 的全新 Proton 界面</title><link>https://wygxmew.github.io/posts/firefox-89-new-proton-ui/</link><pubDate>Thu, 03 Jun 2021 20:32:07 +0800</pubDate><atom:modified>Thu, 03 Jun 2021 20:32:07 +0800</atom:modified><guid>https://wygxmew.github.io/posts/firefox-89-new-proton-ui/</guid><description>今天发现 Firefox 更新到了 89.0 版本，采用了全新设计的 Proton 界面。 如果嫌新 UI 占用空间，想使用紧凑布局，只需在地址栏键入 about:config，选择接受风险</description><content:encoded>&lt;p>今天发现 Firefox 更新到了 89.0 版本，采用了全新设计的 Proton 界面。&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>如果嫌新 UI 占用空间，想使用紧凑布局，只需在地址栏键入 about:config，选择接受风险并继续，然后搜索 browser.compactmode.show，将其值切换为 true，然后在「定制工具栏」界面切换到紧凑布局即可。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>如果不喜欢新的 Proton 界面 ，可以将 browser.proton.enabled 的值切换为 false，具体操作步骤同上，即可关闭新 UI 恢复到旧 UI。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;br/>
+&lt;p>参考：&lt;a href="https://v2ex.com/t/780758">Firefox 89 更新了设计语言，感觉不错&lt;/a>&lt;/p></content:encoded><dc:creator>乌云盖雪</dc:creator><category>Firefox</category><category>UI</category><category>IT</category><category>笔记</category><category>IT 和互联网</category></item></channel></rss>

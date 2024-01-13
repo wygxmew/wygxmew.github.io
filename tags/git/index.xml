@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>Git on 乌云盖雪</title><link>https://wygxmew.github.io/tags/git/</link><description>Recent content in Git on 乌云盖雪</description><generator>Hugo -- gohugo.io</generator><language>zh</language><copyright>&amp;copy; 2006 - {year} 乌云盖雪</copyright><lastBuildDate>Fri, 06 Sep 2019 12:40:38 +0800</lastBuildDate><atom:link href="https://wygxmew.github.io/tags/git/index.xml" rel="self" type="application/rss+xml"/><item><title>Hexo 如何删除 git commit 历史记录</title><link>https://wygxmew.github.io/posts/hexo-delete-git-commit-history/</link><pubDate>Fri, 06 Sep 2019 12:40:38 +0800</pubDate><atom:modified>Fri, 06 Sep 2019 12:40:38 +0800</atom:modified><guid>https://wygxmew.github.io/posts/hexo-delete-git-commit-history/</guid><description>有时 Hexo 博客发布之后，会对博客内容再进行修改，如果不想要别人看到 Hexo 博客的修改历史，只保留最后的版本，那我们可以把以前的 git commit 历史记录清理掉，这样</description><content:encoded>&lt;p>有时 Hexo 博客发布之后，会对博客内容再进行修改，如果不想要别人看到 Hexo 博客的修改历史，只保留最后的版本，那我们可以把以前的 git commit 历史记录清理掉，这样还可以减少占用的 Pages 空间。操作步骤如下：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>删除 .deploy_git 文件夹。为防意外删前最好备份一下，git commit 历史记录就保存在这个文件夹里。.deploy_git 文件夹是隐藏文件夹，需要在设置里开启显示隐藏文件（夹）选项才能看到。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>打开 Git Bash 进入 Hexo 站点目录。具体操作是，打开 Hexo 博客目录，然后在此处单击右键调用相关菜单打开 Git Bash 或终端。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在 Git Bash 或终端中执行命令：&lt;/p>
+&lt;pre tabindex="0">&lt;code>hexo clean
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;li>
+&lt;p>在 Git Bash 或终端中执行命令：&lt;/p>
+&lt;pre tabindex="0">&lt;code>hexo d -g
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;/ol></content:encoded><dc:creator>乌云盖雪</dc:creator><category>Hexo</category><category>Git</category><category>IT</category><category>互联网</category><category>笔记</category><category>IT 和互联网</category><category>博客建站</category></item></channel></rss>
